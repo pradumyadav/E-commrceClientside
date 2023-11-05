@@ -1,0 +1,15 @@
+
+
+        /* .homeChild{
+            display: flex;
+        } */
+        .home_SubParent{
+            border: 5px solid black;
+            display: flex;
+            flex-wrap: wrap;
+         
+            text-align: center;
+        }
+        .home_Img{
+            width: 200px;
+        }
