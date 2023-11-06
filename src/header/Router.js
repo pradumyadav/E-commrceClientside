@@ -23,6 +23,7 @@ import Sonata from "../allComponent/watch/Sonata";
 import Barbell from "../allComponent/gym/Barbell";
 import Dumbbell from "../allComponent/gym/Dumbbell";
 import Gloves from "../allComponent/gym/Gloves";
+import Dynamic from "../dynamic/dynamic";
 
 
 
@@ -60,6 +61,7 @@ import Gloves from "../allComponent/gym/Gloves";
                     <Route path="/barbell" element={<Barbell/>}/>
                     <Route path="/dumbbell" element={<Dumbbell/>}/>
                     <Route path="/glove" element={<Gloves/>}/>
+                    <Route path ="/dynamic/:id"element={<Dynamic/>}/>
                     
                     </Routes>
 

@@ -4,6 +4,8 @@ import axios from "axios";
 
 import "./Home.css"
 import Header from "../../header/Header";
+import { NavLink } from "react-router-dom";
+import Footer from "../../footer/Footer";
 
 
       export default function Home (){
@@ -18,25 +20,31 @@ import Header from "../../header/Header";
             },[])
 
             return(
-                <div>
+                <div className="home_Parent">
                      <Header/>
                           <ContinueImg/>
 
                           <div className="home_SubParent">
+                            <div className="home_Right">
                             {
                               data.map((item,index)=>{
                                 return (
+                                  <NavLink to={`/dynamic/${item.id}`}>
                                     <div className="homeChild" key={index}>
                                         <div><img className="home_Img" src={item.img} alt="Not Found"/></div>
                                         <div>{item.title}</div>
                                         <div>{item.price}</div>
                                     </div>
+                                  </NavLink>
+                                    
                                 
                                 )
                               })
                             }
+                            </div>
 
                           </div>
+                          <Footer/>
                 </div>
             )
         }

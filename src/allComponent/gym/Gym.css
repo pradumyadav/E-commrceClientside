@@ -1,36 +1,33 @@
 
 
-/* css for Clothes Component Web view*/
-
-.clothe_SubParent{
+.gym_SubParent{
     border: 5px solid black;
     display: flex;
     justify-content: space-around;
     text-align: center;
 }
-.clotheChild{
+.gymChild{
     border: 2px solid orange;
     margin: 10px 15px;
     width: 230px;
-    
   
 }
-.clotheChild:hover{
+.gymChild:hover{
     box-shadow: 3px 5px 5px black;
     position: relative;
     bottom:5px;
 }
-.clothe_Img{
+.gym_Img{
     width: 200px;
     height: 230px;
 }
 
-.clothe_Left{
+.gym_Left{
     border: 4px solid black;
     width: 300px;
     
 }
-.clothe_Right{
+.gym_Right{
     border: 4px solid red;
     width: 65%;
     display: flex;

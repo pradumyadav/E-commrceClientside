@@ -68,24 +68,7 @@ export default function Header() {
           </ul>
         </NavLink>
         </div>
-       <div
-         className="clothe-container"
-         onMouseEnter={() => setIsClotheHovered(true)}
-         onMouseLeave={() => setIsClotheHovered(false)} 
-       >
-       <NavLink to="/clothe">
-          <ul type="none">
-            <li><h4>CLOTHE</h4></li>
-            {isClotheHovered && (
-                <ul type="none" className="menu">
-                   <NavLink to="/men"><li>Men</li></NavLink> 
-                   <NavLink to="/women"><li>Women</li></NavLink>  
-                   <NavLink to="/baby"><li>Babys</li></NavLink>
-                  </ul>
-            )}
-            </ul>
-        </NavLink>
-       </div>
+      
        <div
         className="furniture-container"
         onMouseEnter={() => setIsFurnitureHovered(true)}
@@ -121,6 +104,24 @@ export default function Header() {
                 </ul>
             )}
           </ul>
+        </NavLink>
+       </div>
+       <div
+         className="clothe-container"
+         onMouseEnter={() => setIsClotheHovered(true)}
+         onMouseLeave={() => setIsClotheHovered(false)} 
+       >
+       <NavLink to="/clothe">
+          <ul type="none">
+            <li><h4>CLOTHE</h4></li>
+            {isClotheHovered && (
+                <ul type="none" className="menu">
+                   <NavLink to="/men"><li>Men</li></NavLink> 
+                   <NavLink to="/women"><li>Women</li></NavLink>  
+                   <NavLink to="/baby"><li>Babys</li></NavLink>
+                  </ul>
+            )}
+            </ul>
         </NavLink>
        </div>
         <div

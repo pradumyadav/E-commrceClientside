@@ -1,36 +1,34 @@
 
 
-/* css for Clothes Component Web view*/
 
-.clothe_SubParent{
+.watch_SubParent{
     border: 5px solid black;
     display: flex;
     justify-content: space-around;
     text-align: center;
 }
-.clotheChild{
+.watchChild{
     border: 2px solid orange;
     margin: 10px 15px;
-    width: 230px;
-    
+    width: 250px;
   
 }
-.clotheChild:hover{
+.watchChild:hover{
     box-shadow: 3px 5px 5px black;
     position: relative;
     bottom:5px;
 }
-.clothe_Img{
+.watch_Img{
     width: 200px;
     height: 230px;
 }
 
-.clothe_Left{
+.watch_Left{
     border: 4px solid black;
     width: 300px;
     
 }
-.clothe_Right{
+.watch_Right{
     border: 4px solid red;
     width: 65%;
     display: flex;

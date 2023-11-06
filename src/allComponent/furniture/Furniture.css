@@ -1,36 +1,37 @@
 
 
-/* css for Clothes Component Web view*/
+/* css for Furniture Component Web view*/
 
-.clothe_SubParent{
+.furniture_SubParent{
     border: 5px solid black;
     display: flex;
+   
+    /* flex-wrap: wrap; */
     justify-content: space-around;
     text-align: center;
 }
-.clotheChild{
+.furnitureChild{
     border: 2px solid orange;
     margin: 10px 15px;
     width: 230px;
-    
   
 }
-.clotheChild:hover{
+.furnitureChild:hover{
     box-shadow: 3px 5px 5px black;
     position: relative;
     bottom:5px;
 }
-.clothe_Img{
+.furniture_Img{
     width: 200px;
     height: 230px;
 }
 
-.clothe_Left{
+.furniture_Left{
     border: 4px solid black;
     width: 300px;
     
 }
-.clothe_Right{
+.furniture_Right{
     border: 4px solid red;
     width: 65%;
     display: flex;

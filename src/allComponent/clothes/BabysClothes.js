@@ -1,10 +1,43 @@
 
-
+import { useEffect, useState } from "react";
+import Header from "../../header/Header";
+import axios from "axios";
+import Footer from "../../footer/Footer";
 
        export default function BabyClothes(){
+        const[data,setData] =useState
+        ([])
+
+        useEffect(()=>{
+            axios
+            .get("http://localhost:4001/api/clothe")
+            .then((res)=>setData(res.data.filter(item => item.type === "babys")))
+            .catch((err)=>console.log(err))
+        },[])
             return(
                 <div>
-                    <h1>BabyClothes Component</h1>
-                </div>
+                    <Header/>
+                       
+
+                         <div className="clothe_SubParent">
+                          
+                           <div className="clothe_Right">
+                           {
+                             data.map((item,index)=>{
+                               return (
+                                   <div className="clotheChild" key={index}>
+                                       <div><img className="clothe_Img" src={item.img} alt="Not Found"/></div>
+                                       <div>{item.title}</div>
+                                       <div>{item.price}</div>
+                                   </div>
+                               
+                               )
+                             })
+                           }
+                           </div>
+
+                         </div>
+                         <Footer/>
+               </div>
             )
         }

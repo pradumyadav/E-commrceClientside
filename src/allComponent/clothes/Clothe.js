@@ -1,9 +1,11 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-//import ContinueImg from "../../continue/ContinueImg";
+
 import Header from "../../header/Header";
 import "./Clothe.css"
+import { NavLink } from "react-router-dom";
+import Footer from "../../footer/Footer";
                export default function Clothe (){
 
                 const[data,setData] =useState([])
@@ -21,7 +23,9 @@ import "./Clothe.css"
 
                         <div className="clothe_SubParent">
                           <div className="clothe_Left">
-                          
+                         <h3><NavLink to="/men">MEN</NavLink></h3> 
+                         <h3><NavLink to="/women ">WOMEN</NavLink></h3> 
+                         <h3><NavLink to="/baby">BABYS</NavLink></h3> 
                           </div>
                           <div className="clothe_Right">
                           {
@@ -39,6 +43,7 @@ import "./Clothe.css"
                           </div>
 
                         </div>
+                        <Footer/>
                     </div>
                 )
                 }
