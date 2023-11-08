@@ -23,9 +23,10 @@ import Footer from "../../footer/Footer";
                 <div className="home_Parent">
                      <Header/>
                           <ContinueImg/>
-
+                          <h1 className="best">BEST SELLER</h1>
                           <div className="home_SubParent">
                             <div className="home_Right">
+                           
                             {
                               data.map((item,index)=>{
                                 return (

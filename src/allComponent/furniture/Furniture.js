@@ -31,11 +31,14 @@ import Footer from "../../footer/Footer";
                  {
                    data.map((item,index)=>{
                      return (
+                      <NavLink to={`/dynamic/${item.id}`}>
+
                          <div className="furnitureChild" key={index}>
                              <div><img className="furniture_Img" src={item.img} alt="Not Found"/></div>
                              <div>{item.title}</div>
                              <div>{item.price}</div>
                          </div>
+                      </NavLink>
                      
                      )
                    })

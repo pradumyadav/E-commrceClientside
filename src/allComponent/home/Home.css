@@ -9,7 +9,10 @@
            
             text-align: center;
         }
-       
+        .best{
+            text-align: center;
+            font-family:'Courier New', Courier, monospace;
+        }
         
         .homeChild{
             border: 2px solid orange;

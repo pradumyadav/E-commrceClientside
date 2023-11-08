@@ -1,0 +1,25 @@
+
+
+         
+        .dynamic_Child1{
+            
+           display: flex;
+           justify-content:space-evenly;
+           align-items: center;
+
+        }
+        .dynamic_Img {
+            width: 400px;
+            height: 500px;
+        }
+        .display_Title{
+            font-family: 'Courier New', Courier, monospace;
+            width: 90%;
+        }
+        .display_Des{
+            font-size: 20px;
+            width: 90%;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+        }
+       

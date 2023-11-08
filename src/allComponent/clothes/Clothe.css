@@ -28,6 +28,9 @@
 .clothe_Left{
     border: 4px solid black;
     width: 300px;
+    display: flex;
+    justify-content: center;
+   
     
 }
 .clothe_Right{
@@ -37,4 +40,25 @@
    flex-wrap: wrap;
    justify-content: space-around;
   
+}
+
+.small_Nav{
+    border: 2px solid orange;
+    height: 20%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(188, 184, 184);
+    color: dimgray;
+}
+
+
+.clothe_Left_Child{
+    border: 2px solid violet;
+    position: relative;
+    top: 110px;
+
+    width: 90%;
+    height: 3%;
 }
