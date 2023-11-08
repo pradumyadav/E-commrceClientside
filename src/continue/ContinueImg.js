@@ -29,7 +29,7 @@ export default function ContinueImg() {
   }, [currentImageIndex, data]);
 
   return (
-    <div className="top3">
+    <nav className="top3">
       {data.map((item, index) => (
         <div
           key={index}
@@ -40,6 +40,6 @@ export default function ContinueImg() {
           <img className="top3_Img" src={item.link} alt="Not Found" />
         </div>
       ))}
-    </div>
+    </nav>
   );
 }
