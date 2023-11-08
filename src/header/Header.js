@@ -16,8 +16,8 @@ export default function Header() {
     <div>
 
       <div className="top1">
-        <div className="logo">1</div>
-        <div className="search_Bar"></div>
+        <div className="logo">MOZO</div>
+        <input className="search_Bar"></input>
         <button className="basket">
           <img className="basket_Img" src={basketImg} alt="Not Found" />
         </button>
