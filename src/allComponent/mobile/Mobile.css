@@ -39,6 +39,21 @@
    justify-content: space-around;
   
 }
+/* Add this to your existing CSS file */
+/* .loadMoreBtn {
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    
+  }
+  
+  .loadMoreBtn:hover {
+    background-color: #2980b9;
+  }
+   */
 
 
 @media screen and (max-width:580px){

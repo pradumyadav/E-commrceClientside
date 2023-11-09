@@ -1,7 +1,7 @@
 
 
 .top1{
-    border:3px solid black;
+    border: 3px solid #1c6aa1;
     height: 70px;
     background-color: #2e91d3;
     display: flex;
@@ -10,17 +10,24 @@
 }
 .top1_right{
     display: flex;
-   
+    background-color: #1c6aa1;
     width: 40%;
     justify-content: space-around;
 }
 
 .logo{
-    border: 2px solid black;
-    font-family: 'Courier New', Courier, monospace;
+    
+    font-family:cursive;
     font-size: large;
-    font-weight: bold;
+    font-weight: bolder;
     margin-left: 15%;
+    font-size: 150%;
+    color: white;
+    background-color:#252525;
+    width: 20%;
+    text-align: center;
+    height:41px;
+
 }
 
 .search_Bar{
