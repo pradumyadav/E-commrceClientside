@@ -8,3 +8,13 @@
     
 
 }
+@media screen and (max-width:580px){
+    
+.top3_Img{
+    border: 5px solid black;
+    width:98.1%;
+    height: 400px;
+    
+
+}
+}

@@ -62,3 +62,8 @@
     width: 90%;
     height: 3%;
 }
+@media screen and (max-width:580px){
+    .clothe_Left{
+        display: none;
+     }
+}

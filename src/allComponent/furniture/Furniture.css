@@ -39,3 +39,8 @@
    justify-content: space-around;
   
 }
+@media screen and (max-width:580px){
+    .furniture_Left{
+        display: none;
+     }
+}

@@ -36,3 +36,8 @@
    justify-content: space-around;
   
 }
+@media screen and (max-width:580px){
+    .watch_Left{
+        display: none;
+     }
+}

@@ -19,7 +19,7 @@ import { NavLink } from "react-router-dom";
                 <div>
                     <Header/>
                        
-
+                          {/* <h1>Hello</h1> */}
                          <div className="clothe_SubParent">
                           
                            <div className="clothe_Right">

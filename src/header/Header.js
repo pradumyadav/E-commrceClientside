@@ -4,19 +4,22 @@ import basketImg from "../img/add-to-cart.png";
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
-    
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const [isHomeHovered, setIsHomeHovered] = useState(false);
   const[isMobileHovered,setIsMobileHovered]=useState(false)
   const[isClotheHovered,setIsClotheHovered]=useState(false)
   const[isFurnitureHovered,setIsFurnitureHovered]=useState(false)
   const[isWatchHovered,setIsWatchHovered]=useState(false)
   const[isGymHovered,setIsGymHovered]=useState(false)
-
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
   return (
     <div>
 
       <div className="top1">
-        <div className="logo">MOZO</div>
+        <div className="logo">UrbanPulse</div>
+        <div className="top1_right"> 
         <input className="search_Bar"></input>
         <button className="basket">
           <img className="basket_Img" src={basketImg} alt="Not Found" />
@@ -24,10 +27,26 @@ export default function Header() {
         <div className="sign_In">
           <button>Sign In</button>
         </div>
+         {/* Hamburger Icon for Mobile */}
+         <div className="hamburger" onClick={toggleMenu}>
+          &#9776;
+        </div>
+        </div>
       </div>
 
+       {/* Navigation */}
+      <nav className={`nav2 ${isMenuOpen ? "open" : ""}`}>
+        <div className="ham_Div">
+        <input className="search" placeholder="Search Here"></input>
+        {/* <button className="ham-Basket_img1"> */}
+          <img className="ham_Basket_Img2" src={basketImg} alt="Not Found" />
+        {/* </button> */}
+        <div className="sign">
+          <button className="ham_Btn">Sign In</button>
+        </div>
 
-      <nav className="nav2">
+        </div>
+     
         <div
           className="home-container"
           onMouseEnter={() => setIsHomeHovered(true)}
@@ -35,7 +54,7 @@ export default function Header() {
         >
           <NavLink to="/">
             <ul  type="none">
-              <li><h4>HOME</h4></li>
+              <li>HOME</li>
               {isHomeHovered && (
                 <ul type="none" className="menu">
                   <NavLink to="/clothe"><li>Clothe</li></NavLink> 
@@ -57,7 +76,7 @@ export default function Header() {
              <NavLink to="/mobile">
           <ul  type="none">
 
-            <li><h4>MOBILE</h4></li>
+            <li>MOBILE</li>
             {isMobileHovered && (
                 <ul type="none" className="menu">
                 <NavLink to="/iphone"><li>IPhone</li></NavLink>
@@ -76,7 +95,7 @@ export default function Header() {
        >
        <NavLink to="/furniture">
           <ul type="none">
-            <li><h4>FURNITURE</h4></li>
+            <li>FURNITURE</li>
 
             {isFurnitureHovered && (
                  <ul type="none" className="menu" >
@@ -95,7 +114,7 @@ export default function Header() {
        >
        <NavLink to="/watch">
           <ul type="none">
-            <li><h4>WATCH</h4></li>
+            <li>WATCH</li>
             {isWatchHovered && (
                 <ul type="none" className="menu">
                   <NavLink to="/fastrck"><li>Fastrck</li></NavLink>   
@@ -113,7 +132,7 @@ export default function Header() {
        >
        <NavLink to="/clothe">
           <ul type="none">
-            <li><h4>CLOTHE</h4></li>
+            <li>CLOTHE</li>
             {isClotheHovered && (
                 <ul type="none" className="menu">
                    <NavLink to="/men"><li>Men</li></NavLink> 
@@ -131,7 +150,7 @@ export default function Header() {
         >
         <NavLink to="/gym">
           <ul type="none">
-            <li><h4>GYM</h4></li>
+           <li>GYM</li> 
             {isGymHovered && (
                 <ul type="none" className="menu">
                <NavLink to="/dumbbell"> <li>Dumbbell</li></NavLink> 

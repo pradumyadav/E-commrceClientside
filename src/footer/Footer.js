@@ -16,7 +16,7 @@
                             <div className="footer_Child1">
                                
                                 <div>
-                                <h3>M O Z O</h3>
+                                <h3>UrbanPulse</h3>
                                     <p className="font_Size">STay Home - Shop Online</p>
                                     <p className="font_Size">Where you can always find something you want..</p>
                                 </div>
