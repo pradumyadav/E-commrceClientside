@@ -4,9 +4,12 @@ import Header from "../../header/Header";
 import axios from "axios";
 import Footer from "../../footer/Footer";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addtoCart } from "../../fiture/Store.js/Slice";
 
         
         export default function Shelf (){
+          const dispatch =useDispatch()
             const[data,setData] =useState([])
 
         useEffect(()=>{
@@ -25,15 +28,26 @@ import { NavLink } from "react-router-dom";
                  <div className="furniture_Right">
                  {
                    data.map((item,index)=>{
+                    const{id=item.id,img=item.img,title=item.title,price=item.price} = item
+                    console.log(id)
                      return (
-                      <NavLink to={`/dynamic/${item.id}`}>
+                      <div>
+                        <NavLink to={`/dynamic/${item.id}`}>
 
-                         <div className="furnitureChild" key={index}>
-                             <div><img className="furniture_Img" src={item.img} alt="Not Found"/></div>
-                             <div className="titel">{item.title}</div>
-                             <div className="price">&#8377;&nbsp;{item.price}</div>
-                         </div>
-                      </NavLink>
+                        <div className="furnitureChild" key={index}>
+                            <div><img className="furniture_Img" src={item.img} alt="Not Found"/></div>
+                            <div className="titel">{item.title}</div>
+                            <div className="price">&#8377;&nbsp;{item.price}</div>
+                        </div>
+                        </NavLink>
+                        
+                        <button onClick={()=>dispatch(addtoCart({id,img,title,price}))}>
+                      Add To Cart 
+                      </button>
+
+                      </div>
+                      
+                      
                      
                      )
                    })

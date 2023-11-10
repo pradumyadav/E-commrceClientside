@@ -24,6 +24,7 @@ import Barbell from "../allComponent/gym/Barbell";
 import Dumbbell from "../allComponent/gym/Dumbbell";
 import Gloves from "../allComponent/gym/Gloves";
 import Dynamic from "../dynamic/dynamic";
+import Cart from "../cart/Cart";
 
 
 
@@ -62,6 +63,7 @@ import Dynamic from "../dynamic/dynamic";
                     <Route path="/dumbbell" element={<Dumbbell/>}/>
                     <Route path="/glove" element={<Gloves/>}/>
                     <Route path ="/dynamic/:id"element={<Dynamic/>}/>
+                    <Route path="/cart" element={<Cart/>}/>
                     
                     </Routes>
 

@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import "./Header.css";
 import basketImg from "../img/add-to-cart.png";
 import { NavLink } from "react-router-dom";
+import {useSelector} from "react-redux"
 
 export default function Header() {
+  const cardCount = useSelector((state)=>state.Cart.cart)
+
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isHomeHovered, setIsHomeHovered] = useState(false);
   const[isMobileHovered,setIsMobileHovered]=useState(false)
@@ -21,9 +24,11 @@ export default function Header() {
         <div className="logo">UrbanPulse</div>
         <div className="top1_right"> 
         <input className="search_Bar"></input>
-        <button className="basket">
-          <img className="basket_Img" src={basketImg} alt="Not Found" />
-        </button>
+        <NavLink to="/cart">
+        <img className="basket_Img basket" src={basketImg} alt="Not Found" /><span style={{color:"black"}}>{cardCount.length}</span>
+        </NavLink>
+          
+        
         <div className="sign_In">
           <button>Sign In</button>
         </div>
