@@ -37,8 +37,8 @@ import Footer from "../../footer/Footer";
 
                              <div className="watchChild" key={index}>
                                  <div><img className="watch_Img" src={item.img} alt="Not Found"/></div>
-                                 <div>{item.title}</div>
-                                 <div>{item.price}</div>
+                                 <div className="titel">{item.title}</div>
+                                 <div className="price">&#8377;&nbsp;{item.price}</div>
                              </div>
                           </NavLink>
                          
