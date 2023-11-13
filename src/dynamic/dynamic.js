@@ -17,7 +17,7 @@ export default function Dynamic() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4001/api/display`)
+      .get(`http://localhost:4001/api/findData`)
       .then((res) => setMobileData(res.data))  
       .catch((err) => console.log(err));
   }, [id]);

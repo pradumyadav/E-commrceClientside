@@ -15,10 +15,15 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
 
 
         const[data,setData] =useState([])
+        const [loadData,setLoadData]=useState(7)
+
+        const handleNext=()=>{
+          setLoadData(loadData+3);
+        }
 
         useEffect(()=>{
             axios
-            .get("http://localhost:4001/api/furniture")
+            .get("http://localhost:4001/api/findData")
             .then((res)=>setData(res.data))
             .catch((err)=>console.log(err))
         },[])
@@ -29,13 +34,15 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
 
                <div className="furniture_SubParent">
                  <div className="furniture_Left">
-                 <h3><NavLink to="/shelf">SHELF</NavLink></h3> 
-                 <h3><NavLink to="/sofa">SOFA</NavLink></h3> 
-                 <h3><NavLink to="/table">TABLE</NavLink></h3> 
+                 <div className="clothe_Left_Child">
+                 <h3 className="small_Nav"><NavLink to="/shelf">SHELF</NavLink></h3> 
+                 <h3 className="small_Nav"><NavLink to="/sofa">SOFA</NavLink></h3> 
+                 <h3 className="small_Nav"><NavLink to="/table">TABLE</NavLink></h3> 
+                 </div>
                  </div>
                  <div className="furniture_Right">
                  {
-                   data.map((item,index)=>{
+                   data.filter((item)=>item.cat==="furniture").slice(0,loadData).slice(0,loadData).map((item,index)=>{
                     const{id=item.id,img=item.img,title=item.title,price=item.price} = item
                     console.log(id)
                      return (
@@ -61,7 +68,14 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                  </div>
 
                </div>
+               <div className="loadMore_Parent">
+                        <button onClick={handleNext} className="loadMore">
+                        Load More
+                      </button>
+                      </div>
+
                <Footer/>
+
            </div>
             )
         }

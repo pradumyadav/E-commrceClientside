@@ -2,67 +2,73 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../../header/Header";
 import { NavLink } from "react-router-dom";
-import "./Mobile.css";
+import { useDispatch } from "react-redux";
+import { addtoCart } from "../../fiture/Store.js/Slice";
+        import "./Mobile.css"
 import Footer from "../../footer/Footer";
+           export default function Mobile (){
+            const dispatch =useDispatch()
 
-export default function Mobile() {
-  const [data, setData] = useState([]);
-  const [page, setPage] = useState(1); // Track the current page
+            const[data,setData] =useState
+            ([])
+            const [loadData,setLoadData]=useState(7)
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+            const handleNext=()=>{
+              setLoadData(loadData+3);
+            }
 
-  const fetchData = () => {
-    axios
-      .get(`http://localhost:4001/api/mobile?page=${page}`)
-      .then((res) => setData((prevData) => [...prevData, ...res.data]))
-      .catch((err) => console.log(err));
-  };
-
-  const handleLoadMore = () => {
-    console.log("Loading more...");
-    
-    setPage(page + 1);
-  };
-
-  const visibleData = data.slice(0, 9);
-
-  return (
-    <div>
-      <Header />
-      <div className="mobile_SubParent">
-        <div className="mobile_Left">
-          <h3 className="left_NavBar">
-            <NavLink to="/iphone">IPHONE</NavLink>
-          </h3>
-          <h3 className="left_NavBar">
-            <NavLink to="/infinix">INFINIX</NavLink>
-          </h3>
-          <h3 className="left_NavBar">
-            <NavLink to="/vivo">VIVO</NavLink>
-          </h3>
-        </div>
-        <div className="mobile_Right">
-          {visibleData.map((item, index) => (
-            <NavLink to={`/dynamic/${item.id}`} key={index}>
-              <div className="mobileChild">
+            useEffect(()=>{
+                axios
+                .get("http://localhost:4001/api/findData")
+                .then((res)=>setData(res.data))
+                .catch((err)=>console.log(err))
+            },[])
+            return(
                 <div>
-                  <img className="mobile_Img" src={item.img} alt="Not Found" />
+                     <Header/>
+                        
+
+                          <div className="mobile_SubParent">
+                            <div className="mobile_Left">
+                            <div className="clothe_Left_Child">
+                           <h3 className="small_Nav"><NavLink to="/iphone">IPHONE</NavLink></h3> 
+                           <h3 className="small_Nav"><NavLink to="/infinix">INFINIX</NavLink></h3>
+                           <h3 className="small_Nav"><NavLink to="/vivo">VIVO</NavLink></h3>
+                            </div>
+                            </div>
+                            <div className="mobile_Right">
+                            {
+                              data.filter((item)=>item.cat==="mobile").slice(0,loadData).map((item,index)=>{
+                                const{id=item.id,img=item.img,title=item.title,price=item.price} = item
+
+                                return (
+
+                                  <div>
+                                    <NavLink to={`/dynamic/${item.id}`}>
+                                       <div className="mobileChild" key={index}>
+                                        <div><img className="mobile_Img" src={item.img} alt="Not Found"/></div>
+                                        <div className="titel">{item.title}</div>
+                                        <div className="price">&#8377;&nbsp;{item.price}</div>
+                                    </div>
+                                  </NavLink>
+                                  <button onClick={()=>dispatch(addtoCart({id,img,title,price}))}>
+                                  Add To Cart 
+                                  </button>
+                                  </div>
+                                   
+                                )
+                              })
+                            }
+                            </div>
+
+                          </div>
+                          <div className="loadMore_Parent">
+                      <button onClick={handleNext} className="loadMore">
+                        Load More
+                      </button>
+                      </div>
+                     
+                          <Footer/>
                 </div>
-                <div className="titel">{item.title}</div>
-                <div className="price">&#8377;&nbsp;{item.price}</div>
-              </div>
-            </NavLink>
-          ))}
-          {data.length > 9 && (
-          <button className="loadMoreBtn" onClick={handleLoadMore}>
-           Load More
-          </button>
-)}
-        </div>
-      </div>
-      <Footer />
-    </div>
-  );
-}
+            )
+            }

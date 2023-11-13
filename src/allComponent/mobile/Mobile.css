@@ -1,19 +1,13 @@
 
 
 .mobile_SubParent{
-    border: 5px solid black;
     display: flex;
-   
-    /* flex-wrap: wrap; */
     justify-content: space-around;
     text-align: center;
 }
 .mobileChild{
-    border: 2px solid orange;
     margin: 10px 15px;
     width: 230px;
-  
-  
 }
 .mobileChild:hover{
     box-shadow: 3px 5px 5px black;
@@ -26,13 +20,12 @@
 }
 
 .mobile_Left{
-    border: 4px solid black;
     width: 300px;
-    
-    /* width: 200px; */
+    display: flex;
+    justify-content: center;
+   
 }
-.mobile_Right{
-    border: 4px solid red;
+.mobile_Right{ 
     width: 65%;
     display: flex;
    flex-wrap: wrap;
@@ -52,8 +45,45 @@
   .loadMoreBtn:hover {
     background-color: #2980b9;
   }
+  .loadMore_Parent{
+        display: flex;
+        justify-content: center;
+  }
+  .loadMore{
+    font-weight: 900;
+    color: rgb(72, 52, 52);
+    background-color: rgb(188, 98, 98);
+    border: none;
+    border-radius: 20%;
+    width: 20%;
+    height: 40px;
 
-
+ }
+ .small_Nav{
+    border-bottom: 4px solid black;
+        height: 40px;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(188, 184, 184);
+        color: dimgray;
+    }
+    a{
+        color: black;
+    }
+    
+    .furniture_Left_Child{
+      
+        position: relative;
+        background-color: antiquewhite;
+        top: 110px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        height: 30%;
+    }
 @media screen and (max-width:580px){
     .mobile_Left{
        display: none;

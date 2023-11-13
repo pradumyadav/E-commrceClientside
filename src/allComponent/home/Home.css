@@ -43,12 +43,15 @@
         }
         .home_Video{
             border: 3px solid blue;
+            display: flex;
+            justify-content: center;
             width: 99%;
+            
         }
-        video{
+        /* video{
 
          width: 99%;
-        }
+        } */
         .titel{
             font-weight: 900;
             color: rgb(241, 164, 109);

@@ -12,10 +12,15 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                 const dispatch =useDispatch()
 
                 const[data,setData] =useState([])
+                const [loadData,setLoadData]=useState(7)
+
+                const handleNext=()=>{
+                  setLoadData(loadData+3);
+                }
 
                 useEffect(()=>{
                     axios
-                    .get("http://localhost:4001/api/clothe")
+                    .get("http://localhost:4001/api/findData")
                     .then((res)=>setData(res.data))
                     .catch((err)=>console.log(err))
                 },[])
@@ -35,7 +40,7 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                           </div>
                           <div className="clothe_Right">
                           {
-                            data.map((item,index)=>{
+                            data.filter((item)=>item.cat==="clothe").slice(0,loadData).map((item,index)=>{
                               const{id=item.id,img=item.img,title=item.title,price=item.price} = item
                                 console.log(id)
                               return (
@@ -61,6 +66,11 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                           </div>
 
                         </div>
+                        <div className="loadMore_Parent">
+                        <button onClick={handleNext} className="loadMore">
+                        Load More
+                      </button>
+                      </div>
                         <Footer/>
                     </div>
                 )

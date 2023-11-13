@@ -5,8 +5,10 @@ import { useSelector } from "react-redux"
 
 // import { Dispatch } from "@reduxjs/toolkit"
 import { useDispatch } from "react-redux"
-
+import { addtoCart } from "../fiture/Store.js/Slice"
 import { RemoveItem } from "../fiture/Store.js/Slice"
+
+import "./Cart.css"
 
          export default function Cart (){
             
@@ -21,26 +23,33 @@ import { RemoveItem } from "../fiture/Store.js/Slice"
                 }
             
                 return (
-
-                    <div>
+                        <>
+                    <div className="cart_Subparent">
 
                         {selector.map((item,index)=>{
+                        const{id=item.id,img=item.img,title=item.title,price=item.price} = item
+
                             return(
-
-                                <div className="furnitureChild" key={index}>
-                                <div><img className="furniture_Img" src={item.img} alt="Not Found"/></div>
+                                <>
+                                <div className="cartChild" key={index}>
+                                <div><img className="cart_Img" src={item.img} alt="Not Found"/></div>
                                 <div className="titel">{item.title}</div>
+                                <button onClick={()=>dispatch(addtoCart({id,img,title,price}))}>
+                                Add To Cart 
+                                </button>
+                                <button className="cart_Remove" onClick={()=>dispatch(RemoveItem({id:item.id}))}>REMOVE</button>
                                 <div className="price">&#8377;&nbsp;{item.price}</div>
-                                <button onClick={()=>dispatch(RemoveItem({id:item.id}))}>REMOVE</button>
-
-                            </div>
-
+                                </div>
+                                
+                            </>
                             )
                         })}
-                      <div>
-                        <span>{sum}</span>
-                      </div>
+                      
 
                     </div>
+                    <div className="total">
+                        <div>{sum}</div>
+                      </div>
+                    </>
                 )
             }

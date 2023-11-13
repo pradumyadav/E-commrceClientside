@@ -8,11 +8,16 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
 
       export default function Sofa (){
         const[data,setData] =useState([])
+        const [loadData,setLoadData]=useState(7)
+
+        const handleNext=()=>{
+          setLoadData(loadData+3);
+        }
         const dispatch =useDispatch()
 
         useEffect(()=>{
             axios
-            .get("http://localhost:4001/api/furniture")
+            .get("http://localhost:4001/api/findData")
             .then((res)=>setData(res.data.filter(item => item.type === "sofa")))
             .catch((err)=>console.log(err))
         },[])
@@ -25,7 +30,7 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                 
                  <div className="furniture_Right">
                  {
-                   data.map((item,index)=>{
+                   data.filter((item)=>item.type==="sofa").slice(0,loadData).map((item,index)=>{
                     const{id=item.id,img=item.img,title=item.title,price=item.price} = item
                     console.log(id)
                      return (
@@ -51,6 +56,11 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                  </div>
 
                </div>
+               <div className="loadMore_Parent">
+                        <button onClick={handleNext} className="loadMore">
+                        Load More
+                      </button>
+                      </div>
                <Footer/>
            </div>
             )

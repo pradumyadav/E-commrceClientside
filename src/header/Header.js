@@ -25,7 +25,7 @@ export default function Header() {
         <div className="top1_right"> 
         <input className="search_Bar"></input>
         <NavLink to="/cart">
-        <img className="basket_Img basket" src={basketImg} alt="Not Found" /><span style={{color:"black"}}>{cardCount.length}</span>
+        <img className="basket_Img basket" src={basketImg} alt="Not Found" /><span className="span1" >{cardCount.length}</span>
         </NavLink>
           
         
@@ -39,13 +39,15 @@ export default function Header() {
         </div>
       </div>
 
-       {/* Navigation */}
       <nav className={`nav2 ${isMenuOpen ? "open" : ""}`}>
         <div className="ham_Div">
         <input className="search" placeholder="Search Here"></input>
-        {/* <button className="ham-Basket_img1"> */}
-          <img className="ham_Basket_Img2" src={basketImg} alt="Not Found" />
-        {/* </button> */}
+
+        <NavLink to="/cart">
+        <img className="ham_Basket_Img2" src={basketImg} alt="Not Found" />
+        <span className="span2">{cardCount.length}</span>
+        </NavLink>
+      
         <div className="sign">
           <button className="ham_Btn">Sign In</button>
         </div>

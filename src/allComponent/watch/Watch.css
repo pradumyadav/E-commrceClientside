@@ -2,13 +2,13 @@
 
 
 .watch_SubParent{
-    border: 5px solid black;
+   
     display: flex;
     justify-content: space-around;
     text-align: center;
 }
 .watchChild{
-    border: 2px solid orange;
+
     margin: 10px 15px;
     width: 250px;
   
@@ -24,12 +24,13 @@
 }
 
 .watch_Left{
-    border: 4px solid black;
+  
     width: 300px;
-    
+    display: flex;
+    justify-content: center;
 }
 .watch_Right{
-    border: 4px solid red;
+ 
     width: 65%;
     display: flex;
    flex-wrap: wrap;
