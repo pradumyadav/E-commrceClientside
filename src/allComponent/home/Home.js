@@ -13,6 +13,11 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
         const dispatch =useDispatch()
 
             const[data,setData] =useState([])
+            const [loadData,setLoadData]=useState(7)
+
+            const handleNext=()=>{
+              setLoadData(loadData+3);
+            }
 
             useEffect(()=>{
                 axios
@@ -30,17 +35,15 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                             <div className="home_Right">
                            
                             {
-                              data.filter((item)=>item.type==="babys").map((item,index)=>{
+                              data.filter((item)=>item.id%10===0).slice(0,loadData).map((item,index)=>{
                                 const{id=item.id,img=item.img,title=item.title,price=item.price} = item
 
                                 return (
-                                  
                                   <div>
                                     <NavLink to={`/dynamic/${item.id}`}>
                                     <div className="homeChild" key={index}>
                                         <div><img className="home_Img" src={item.img} alt="Not Found"/></div>
-                                        <div className="titel">{item.title}</div>
-                                        {/* <div className="price">{item.price}</div> */}
+                                        <div className="titel">{item.title}</div>                                       
                                         <div className="price">&#8377;&nbsp;{item.price}</div>
                                     </div>
                                   </NavLink>
@@ -54,12 +57,17 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                               })
                             }
                             </div>
-                            {/* <div className="home_Video">
+                          </div>
+                          <div className="loadMore_Parent">
+                        <button onClick={handleNext} className="loadMore">
+                        Load More
+                      </button>
+                      </div>
+                          <div className="home_Video">
                             <img src="https://media1.tenor.com/images/b9f0366ce2fcf04dda9da527d831bed1/tenor.gif?itemid=8171804" style={{width:"95%"}} alt="Not Found"/>
 
-                            </div> */}
-
-                          </div>
+                            </div>
+                          
                           <Footer/>
                 </div>
             )

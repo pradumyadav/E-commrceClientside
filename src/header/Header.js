@@ -6,7 +6,6 @@ import {useSelector} from "react-redux"
 
 export default function Header() {
   const cardCount = useSelector((state)=>state.Cart.cart)
-
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isHomeHovered, setIsHomeHovered] = useState(false);
   const[isMobileHovered,setIsMobileHovered]=useState(false)
@@ -28,10 +27,11 @@ export default function Header() {
         <img className="basket_Img basket" src={basketImg} alt="Not Found" /><span className="span1" >{cardCount.length}</span>
         </NavLink>
           
-        
+        <NavLink to="/register">
         <div className="sign_In">
           <button>Sign In</button>
         </div>
+        </NavLink>
          {/* Hamburger Icon for Mobile */}
          <div className="hamburger" onClick={toggleMenu}>
           &#9776;
