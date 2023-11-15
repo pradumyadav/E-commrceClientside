@@ -35,46 +35,23 @@ export default function Register() {
   };
   return (
     <>
-      <div className="center1">
-        <h1 id="heading">Register</h1>
-    
+      <div>
+        <h1>Register</h1>
         <br />
         <br />
-        <label id="font" htmlFor="email">
-          Email:{" "}
-        </label>
+        <label htmlFor="email">Email:{" "}</label>
+        <input type="email" name="email" id="email" onChange={handleChange} value={data.email} required/>
+        <br />
+        <br />
+        <label id="font" htmlFor="Password"> Set Password:{" "}</label>
         <input
-          className="text2"
-          type="email"
-          name="email"
-          id="email"
-          onChange={handleChange}
-          value={data.email}
-          required
-        />
-        <br />
-        <br />
-        <label id="font" htmlFor="Password">
-          Set Password:{" "}
-        </label>
-        <input
-          className="text3"
-          type="password"
-          maxLength="8"
-          name="password"
-          id="Password"
-          onChange={handleChange}
-          value={data.password}
-          required
-        ></input>
+          type="password" maxLength="8" name="password" id="Password" onChange={handleChange}value={data.password}required></input>
         <br />
         <br />
      
-        <button className="button1" onClick={handleSubmit}>
-          Submit
-        </button>
+        <button  onClick={handleSubmit}> Submit</button>
         <div className="or1">OR</div>
-        <NavLink to="/login" className="nextpage1">
+        <NavLink to="/login">
           Go To Login Page
         </NavLink>
       </div>

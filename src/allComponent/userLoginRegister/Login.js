@@ -38,41 +38,20 @@ export default function Login () {
     });
   };
   return (
-    <div className="center">
+    <div>
       <h1 id="heading">Log in</h1>
-      <form className="loginform" onSubmit={handleSubmit}>
-        <label className="word" htmlFor="email">
-          Email:
-        </label>
-        <input
-          className="text"
-          type="email"
-          name="email"
-          id="email"
-          onChange={handleChange}
-          value={data.email}
-        />
+      <form onSubmit={handleSubmit}>
+        <label className="word" htmlFor="email">Email: </label>
+        <input className="text" type="email" name="email" id="email" onChange={handleChange} value={data.email}/>
         <br />
         <br />
-        <label className="word" htmlFor="password">
-          Password:
-        </label>
-        <input
-          className="text1"
-          type="password"
-          maxLength="8"
-          name="password"
-          id="password"
-          onChange={handleChange}
-          value={data.password}
-        />
+        <label htmlFor="password">  Password: </label>
+        <input type="password" maxLength="8" name="password" id="password"onChange={handleChange}value={data.password}/>
         <br />
         <br />
-        <button className="button" type="submit">
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
-      <div className="or">OR</div>
+      <div>OR</div>
       <NavLink to="/Register" className="nextpage">
         please Register First
       </NavLink>
