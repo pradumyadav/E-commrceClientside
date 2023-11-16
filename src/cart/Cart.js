@@ -1,77 +1,86 @@
-
-
-
-import { useSelector } from "react-redux"
-
-// import { Dispatch } from "@reduxjs/toolkit"
-import { useDispatch } from "react-redux"
-import { addtoCart } from "../fiture/Store.js/Slice"
-import { RemoveItem } from "../fiture/Store.js/Slice"
-
+import React from "react";
 import "./Cart.css"
-import { useEffect } from "react"
-import axios from "axios"
+import { useSelector, useDispatch } from "react-redux";
+import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../fiture/Store.js/Slice";
 
-         export default function Cart (){
-            
-            const selector =useSelector((state)=>state.Cart.cart)
-            console.log(selector)
-            const dispatch =useDispatch()
-            const price = selector.map((item)=> item.price)
-                let sum = 0;
-                for(let i = 0 ; i < price.length ; i++)
-                {
-                    sum = price[i]+sum
-                }
-              const  handleAddtoCart = async (productId)=>{
-                try {
-                    // Retrieve the token from local storage
-                    const token = localStorage.getItem("token");
-                
-                    // Set up the headers with the token
-                    const headers = {
-                      Authorization: `Bearer ${token}`,
-                      "Content-Type": "application/json", // Adjust the content type based on your needs
-                    };
-                
-                    // Make the POST request with Axios
-                    const response = await axios.post("http://localhost:4001/user/addtocart",productId, { headers });
-                
-                    // Handle the response
-                    console.log(response.data);
-                  } catch (error) {
-                    // Handle errors
-                    console.error(error);
-                  }
-              }
-                return (
-                        <>
-                    <div className="cart_Subparent">
+const Cart = () => {
+  const dispatch = useDispatch();
 
-                        {selector.map((item,index)=>{
-                        const{id=item.id,img=item.img,title=item.title,price=item.price} = item
+  const data = useSelector((state) => state.Cart.cart);
 
-                            return(
-                                <>
-                                <div className="cartChild" key={index}>
-                                <div><img className="cart_Img" src={item.img} alt="Not Found"/></div>
-                                <div className="titel">{item.title}</div>
-                                <button onClick={()=>handleAddtoCart(id)}>
-                                Add To Cart 
-                                </button>
-                                <button className="cart_Remove" onClick={()=>dispatch(RemoveItem({id:item.id}))}>REMOVE</button>
-                                <div className="price">&#8377;&nbsp;{item.price}</div>
-                                </div>
-                                
-                            </>
-                            )
-                        })}
-                      
+  const total = data.reduce((acc, item) => {
+    return acc + item.price * item.quantity;
+  }, 0);
 
-                    </div>
-                    <div className="total">
-                        <div>{sum}</div>
-                      </div>
-                    </>
-                )
-            }
+  const handleIncreaseQuantity = (id) => {
+    dispatch(IncreaseQuantity({ id }));
+  };
+  const handleDecreaseQuantity = (id) => {
+    dispatch(DecreaseQuantity({ id }));
+  };
+
+  return (
+    <div>
+      <h2 className="headcart">Cart</h2>
+
+      <div className="cart-content">
+        <div className="headOfcart">
+          <h4>Product</h4>
+          <h4>Title</h4>
+          <h4>Quantity</h4>
+          <h4>Price</h4>
+        </div>
+
+        <div>
+          {data &&
+            data.map((item, index) => {
+              return (
+                <div className="content-cart" key={index}>
+                  <img src={item.img} alt="Not Found" />
+                  <div className="cart-subcontent">
+                    <h2>{item.model}</h2>
+                    <button
+                      className="remove-cart"
+                      onClick={() => dispatch(RemoveItem({ id: item.id }))}
+                    >
+                      Remove Cart
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      className="quantity-btn"
+                      onClick={() => handleDecreaseQuantity(item.id)}
+                    >
+                      -
+                    </button>
+                    <span className="quantity">{item.quantity}</span>
+                    <button
+                      className="quantity-btn"
+                      onClick={() => handleIncreaseQuantity(item.id)}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <h2 className="cartprice">
+                    {"₹ " + item.price * item.quantity}
+                  </h2>
+                 
+                </div>
+              );
+            })}
+        </div>
+
+        <div className="total">
+          <h2>Total </h2>
+          <h1 style={{ color: "black" }}>{total}</h1>
+        </div>
+
+        <div className="buy">
+          <button>Buy Now</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Cart;

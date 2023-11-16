@@ -21,7 +21,7 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
 
             useEffect(()=>{
                 axios
-                .get("http://localhost:4001/api/findData")
+                .get("https://e-commerce-hspl.onrender.com/api/findData")
                 .then((res)=>setData(res.data))
                 .catch((err)=>console.log(err))
             },[])
