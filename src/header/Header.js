@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import {useSelector} from "react-redux"
 
 export default function Header() {
+
   const cardCount = useSelector((state)=>state.Cart.cart)
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isHomeHovered, setIsHomeHovered] = useState(false);
@@ -13,6 +14,7 @@ export default function Header() {
   const[isFurnitureHovered,setIsFurnitureHovered]=useState(false)
   const[isWatchHovered,setIsWatchHovered]=useState(false)
   const[isGymHovered,setIsGymHovered]=useState(false)
+  
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
