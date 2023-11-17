@@ -18,7 +18,7 @@ export default function Login () {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://e-commerce-hspl.onrender.com/api/imgget", data)
+      .post("https://e-commerce-hspl.onrender.com/api/login", data)
       .then((res) => {
         alert(res.data.message);
         setData(res.data);

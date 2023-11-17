@@ -8,7 +8,7 @@ export default function ContinueImg() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4001/api/top3")
+      .get("https://e-commerce-hspl.onrender.com/api/top3")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);

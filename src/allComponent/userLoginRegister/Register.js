@@ -19,7 +19,7 @@ export default function Register() {
     e.preventDefault();
     console.log(data);
     axios
-      .post("https://e-commerce-hspl.onrender.com/api/imgget", data)
+      .post("https://e-commerce-hspl.onrender.com/user/register", data)
       .then((res) => {
          alert(res.data.message);
         setData(res.data);
