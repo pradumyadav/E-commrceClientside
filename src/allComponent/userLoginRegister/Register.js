@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
+import "./Style.css"
 export default function Register() {
   const navi = useNavigate();
   const [data, setData] = useState({

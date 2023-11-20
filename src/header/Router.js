@@ -27,6 +27,7 @@ import Dynamic from "../dynamic/dynamic";
 import Cart from "../cart/Cart";
 import Login from "../allComponent/userLoginRegister/Login";
 import Register from "../allComponent/userLoginRegister/Register";
+import { ShowSearch } from "./ShowSearch";
 
 
 
@@ -68,6 +69,7 @@ import Register from "../allComponent/userLoginRegister/Register";
                     <Route path="/cart" element={<Cart/>}/>
                     <Route path="/login" element={<Login/>}></Route>
                     <Route path="/register" element={<Register/>}></Route>
+                    <Route path="/search" element={<ShowSearch/>}></Route>
                     </Routes>
 
                 </div>

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import basketImg from "../img/add-to-cart.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux"
 import seracImg from "../img/search.png"
 import profileImg from "../img/profile.png"
+import axios from "axios";
 export default function Header() {
 
   const cardCount = useSelector((state)=>state.Cart.cart)
@@ -16,15 +17,49 @@ export default function Header() {
   const[isWatchHovered,setIsWatchHovered]=useState(false)
   const[isGymHovered,setIsGymHovered]=useState(false)
   const [searchData,setSearchData]=useState([])
+  const[val,setval]=useState({value:"",btn:""})
+  const [query, setQuery] = useState("");
+  // const [results, setResults] = useState([]);
+const token=localStorage.getItem("token")
+const userName=localStorage.getItem("name")
+const Nav=useNavigate();
+
+useEffect(()=>{
+  if(token){
+    setval({
+      value:userName,
+      btn:"LogOut"
+    });
+}
+else{
+  setval({
+    value:"Profile",
+    btn:"SignIn"
+  })
+}
+},[token,Nav,userName])
+
+const handlelogout= ()=>{
+  localStorage.removeItem("token");
+  localStorage.removeItem("name");
+  Nav("/")
+}
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
+
+ 
+
   const handleChange=(e)=>{
-    setSearchData(e.target.value)
+    setQuery(e.target.value)
 
   }
+  axios.get(`http://localhost:4001/api/search?title=${query}`)
+  .then((res)=>setSearchData(res.data))
+  .catch(err=>console.log(err))
+  
   const handleSearch=()=>{
-    alert("Serch Somthig ....")
+   
   }
 
   return (
@@ -34,19 +69,31 @@ export default function Header() {
         <div className="logo">UrbanPulse</div>
         <div className="top1_right"> 
         <div>
-        <input className="search_Bar" value={searchData} onChange={()=>handleChange}/>
-        <button onClick={handleSearch}><img className="seracImg" src={seracImg} alt="Not Found"></img></button>
+        <input className="search_Bar" onChange={handleChange}/>
+        <button onClick={handleSearch}><Link to="/search" state={searchData}><img className="seracImg" src={seracImg} alt="Not Found"></img></Link></button>
         </div>
         <NavLink to="/cart">
         <img className="basket_Img basket" src={basketImg} alt="Not Found" /><span className="span1" >{cardCount.length}</span>
         </NavLink>
           
-        <NavLink to="/register">
+        {/* <NavLink to="/register">
         <div className="sign_In">
           <button><img className="profileImg" src={profileImg} alt="Not Found"></img></button>
         </div>
-        </NavLink>
+        </NavLink> */}
+
+
          {/* Hamburger Icon for Mobile */}
+
+         <div><img className="profileImg" src={profileImg} alt="Not Found"></img>
+                <div >
+                  <span>{val.value}</span>
+                  {
+                    val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span><NavLink to='/login'>{val.btn}</NavLink></span>
+                  }
+                </div>
+            </div>
+
          <div className="hamburger" onClick={toggleMenu}>
           &#9776;
         </div>

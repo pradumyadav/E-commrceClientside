@@ -1,0 +1,54 @@
+/* Login.css
+
+div {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  #heading {
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .text {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .nextpage {
+    margin-top: 20px;
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .nextpage:hover {
+    text-decoration: underline;
+    color: #258cd1;
+  }
+  
+  /* Add additional styles as needed */
+   

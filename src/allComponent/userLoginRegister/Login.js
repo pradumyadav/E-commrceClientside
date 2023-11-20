@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "./Style.css"
 export default function Login () {
   const [data, setData] = useState({
     email: "",
@@ -18,7 +19,7 @@ export default function Login () {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://e-commerce-hspl.onrender.com/api/login", data)
+      .post("https://e-commerce-hspl.onrender.com/user/login", data)
       .then((res) => {
         alert(res.data.message);
         setData(res.data);

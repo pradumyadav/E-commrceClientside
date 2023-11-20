@@ -1,10 +1,13 @@
-import React from "react";
-import "./Cart.css"
+// Cart.js
+import React, { useState } from "react";
+import "./Cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../fiture/Store.js/Slice";
+import Checkout from "./Checkout"; // Import your Checkout component
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const [isCheckoutVisible, setCheckoutVisible] = useState(false);
 
   const data = useSelector((state) => state.Cart.cart);
 
@@ -15,8 +18,13 @@ const Cart = () => {
   const handleIncreaseQuantity = (id) => {
     dispatch(IncreaseQuantity({ id }));
   };
+  
   const handleDecreaseQuantity = (id) => {
     dispatch(DecreaseQuantity({ id }));
+  };
+
+  const handleBuyNow = () => {
+    setCheckoutVisible(true);
   };
 
   return (
@@ -64,7 +72,6 @@ const Cart = () => {
                   <h2 className="cartprice">
                     {"₹ " + item.price * item.quantity}
                   </h2>
-                 
                 </div>
               );
             })}
@@ -76,9 +83,11 @@ const Cart = () => {
         </div>
 
         <div className="buy">
-          <button>Buy Now</button>
+          <button onClick={handleBuyNow}>Buy Now</button>
         </div>
       </div>
+
+      {isCheckoutVisible && <Checkout data={data} total={total} />}
     </div>
   );
 };
