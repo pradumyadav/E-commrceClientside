@@ -20,7 +20,7 @@ export default function Register() {
     e.preventDefault();
     console.log(data);
     axios
-      .post("https://e-commerce-hspl.onrender.com/user/register", data)
+      .post("http://localhost:4001/user/register", data)
       .then((res) => {
          alert(res.data.message);
         setData(res.data);
@@ -36,21 +36,21 @@ export default function Register() {
   };
   return (
     <>
-      <div>
+      <div className="loginParent">
         <h1>Register</h1>
         <br />
         <br />
-        <label htmlFor="email">Email:{" "}</label>
-        <input type="email" name="email" id="email" onChange={handleChange} value={data.email} required/>
+        <label className="word" htmlFor="email">Email:{" "}</label>
+        <input  className="text" type="email" name="email" id="email" onChange={handleChange} value={data.email} required/>
         <br />
         <br />
-        <label id="font" htmlFor="Password"> Set Password:{" "}</label>
+        <label className="word" id="font" htmlFor="Password"> Set Password:{" "}</label>
         <input
-          type="password" maxLength="8" name="password" id="Password" onChange={handleChange}value={data.password}required></input>
+          className="text" type="password" maxLength="8" name="password" id="Password" onChange={handleChange}value={data.password}required></input>
         <br />
         <br />
      
-        <button  onClick={handleSubmit}> Submit</button>
+        <button  className="btn1"onClick={handleSubmit}> Submit</button>
         <div className="or1">OR</div>
         <NavLink to="/login">
           Go To Login Page

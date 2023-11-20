@@ -11,7 +11,7 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
             const dispatch =useDispatch()
             const[data,setData] =useState
             ([])
-            const [loadData,setLoadData]=useState(7)
+            const [loadData,setLoadData]=useState(8)
 
             const handleNext=()=>{
               setLoadData(loadData+3);

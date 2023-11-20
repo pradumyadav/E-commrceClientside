@@ -76,16 +76,9 @@ const handlelogout= ()=>{
         <img className="basket_Img basket" src={basketImg} alt="Not Found" /><span className="span1" >{cardCount.length}</span>
         </NavLink>
           
-        {/* <NavLink to="/register">
-        <div className="sign_In">
-          <button><img className="profileImg" src={profileImg} alt="Not Found"></img></button>
-        </div>
-        </NavLink> */}
+       
 
-
-         {/* Hamburger Icon for Mobile */}
-
-         <div><img className="profileImg" src={profileImg} alt="Not Found"></img>
+         <div className="profile"><img className="profileImg" src={profileImg} alt="Not Found"></img>
                 <div >
                   <span>{val.value}</span>
                   {
@@ -200,7 +193,7 @@ const handlelogout= ()=>{
        >
        <NavLink to="/clothe">
           <ul type="none">
-            <li>CLOTHE</li>
+            <li>CLOTH</li>
             {isClotheHovered && (
                 <ul type="none" className="menu">
                    <NavLink to="/men"><li>Men</li></NavLink> 

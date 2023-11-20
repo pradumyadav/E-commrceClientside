@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import "./Cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../fiture/Store.js/Slice";
-import Checkout from "./Checkout"; // Import your Checkout component
+
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const [isCheckoutVisible, setCheckoutVisible] = useState(false);
-
+  
   const data = useSelector((state) => state.Cart.cart);
 
   const total = data.reduce((acc, item) => {
@@ -29,7 +30,7 @@ const Cart = () => {
 
   return (
     <div>
-      <h2 className="headcart">Cart</h2>
+     
 
       <div className="cart-content">
         <div className="headOfcart">
@@ -42,9 +43,13 @@ const Cart = () => {
         <div>
           {data &&
             data.map((item, index) => {
+
               return (
+
+
                 <div className="content-cart" key={index}>
-                  <img src={item.img} alt="Not Found" />
+                  {/* arr.push(item) */}
+                  <img className="cartImage" src={item.img} alt="Not Found" />
                   <div className="cart-subcontent">
                     <h2>{item.model}</h2>
                     <button
@@ -83,11 +88,13 @@ const Cart = () => {
         </div>
 
         <div className="buy">
+          <NavLink to="/checkout" state={data}>
           <button onClick={handleBuyNow}>Buy Now</button>
+          </NavLink>
         </div>
       </div>
 
-      {isCheckoutVisible && <Checkout data={data} total={total} />}
+
     </div>
   );
 };

@@ -11,7 +11,7 @@ import Footer from "../../footer/Footer";
 
             const[data,setData] =useState
             ([])
-            const [loadData,setLoadData]=useState(7)
+            const [loadData,setLoadData]=useState(8)
 
             const handleNext=()=>{
               setLoadData(loadData+3);

@@ -1,42 +1,82 @@
-// Checkout.js
-import React from "react";
-import "./Cart.css";
-const Checkout = ({ data, total }) => {
+
+
+import "./Cart.css"
+
+import { useLocation, useNavigate} from "react-router-dom";
+const Checkout = () => {
+      
+      const location=useLocation()
+  
+
+    const navi= useNavigate()
+     
+
+    const total = location.state.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
+
+    const handleClick=(e)=>{
+        e.preventDefault()  
+        navi("/buy")
+    }
+     
+     
   return (
     <div className="checkout-container">
-      <h2>Checkout Summary</h2>
-      <div className="checkout-content">
-        <div>
-          <h4>Product</h4>
-          <ul>
-            {data.map((item, index) => (
-              <li key={index}>{item.model}</li>
-            ))}
-          </ul>
+     
+      <form>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" name="name" required />
         </div>
-        <div>
-          <h4>Quantity</h4>
-          <ul>
-            {data.map((item, index) => (
-              <li key={index}>{item.quantity}</li>
-            ))}
-          </ul>
+
+        <div className="form-group">
+          <label htmlFor="address">Address:</label>
+          <input type="text" id="address" name="address" required />
         </div>
-        <div>
-          <h4>Total Price</h4>
-          <ul>
-            {data.map((item, index) => (
-              <li key={index}>{"₹ " + item.price * item.quantity}</li>
-            ))}
-          </ul>
+
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" required />
         </div>
-      </div>
-      <div className="checkout-total">
-        <h4>Total</h4>
-        <p>{"₹ " + total}</p>
-      </div>
-      <p>Thank you for shopping with us!</p>
+
+        <div className="form-group">
+          <label htmlFor="card">Credit Card Number:</label>
+          <input type="text" id="card" name="card" required />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="expiry">Card Expiry:</label>
+          <input type="text" id="expiry" name="expiry" placeholder="MM/YY"/>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="cvv">CVV:</label>
+          <input type="text" id="cvv" name="cvv" required />
+        </div>
+
+        <button onClick={handleClick} type="submit">Place Order</button>
+      </form>
+      <div>
+         
+      {location.state.map((item)=>{
+
+        return (
+        <>      
+                  
+                  <h2>Product: {item.title}</h2>
+                  <h2 className="cartprice">
+                   Price: {"₹ " + item.price * item.quantity}
+                  </h2>
+                  
+                  </>
+                  )
+      })}
+      <h1>Total :{total}</h1>
+
+     </div>
     </div>
+   
   );
 };
 

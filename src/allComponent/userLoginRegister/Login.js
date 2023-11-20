@@ -19,7 +19,7 @@ export default function Login () {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://e-commerce-hspl.onrender.com/user/login", data)
+      .post("http://localhost:4001/user/login", data)
       .then((res) => {
         alert(res.data.message);
         setData(res.data);
@@ -39,18 +39,18 @@ export default function Login () {
     });
   };
   return (
-    <div>
+    <div className="loginParent">
       <h1 id="heading">Log in</h1>
       <form onSubmit={handleSubmit}>
         <label className="word" htmlFor="email">Email: </label>
         <input className="text" type="email" name="email" id="email" onChange={handleChange} value={data.email}/>
         <br />
         <br />
-        <label htmlFor="password">  Password: </label>
-        <input type="password" maxLength="8" name="password" id="password"onChange={handleChange}value={data.password}/>
+        <label className="word" htmlFor="password">  Password: </label>
+        <input className="text" type="password" maxLength="8" name="password" id="password"onChange={handleChange}value={data.password}/>
         <br />
         <br />
-        <button type="submit">Submit</button>
+        <button className="btn1" type="submit">Submit</button>
       </form>
       <div>OR</div>
       <NavLink to="/Register" className="nextpage">

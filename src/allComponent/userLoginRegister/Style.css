@@ -51,4 +51,61 @@ div {
   }
   
   /* Add additional styles as needed */
-   
+   /* Style.css */
+
+.loginParent {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #heading {
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .word {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .text {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn1 {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn1:hover {
+    background-color: #45a049;
+  }
+  
+  .nextpage {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .nextpage:hover {
+    color: #000;
+  }
+  

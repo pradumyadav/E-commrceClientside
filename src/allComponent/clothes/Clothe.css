@@ -11,7 +11,8 @@
 .clotheChild{
    
     margin: 10px 15px;
-    width: 230px;
+    width: 200px;
+    height: 300px;
     
   
 }
@@ -35,7 +36,7 @@
 }
 .clothe_Right{
    
-    width: 65%;
+    width: 75%;
     display: flex;
    flex-wrap: wrap;
    justify-content: space-around;

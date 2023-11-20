@@ -23,8 +23,12 @@
   grid-template-columns: 1fr 2fr 1fr 1fr;
   align-items: center;
   margin: 10px 0;
+  border-bottom: 5px solid red;
+  
 }
-
+.cartImage{
+  width: 150px;
+}
 .remove-cart {
   background-color: #ff6347;
   color: white;
@@ -63,24 +67,101 @@
 /* Add additional styles as needed */
 /* Checkout.css */
 
-.checkout-container {
-  margin: 20px;
-}
-
-.checkout-content {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-
-.checkout-content div {
-  text-align: center;
-}
-
-.checkout-total {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-}
-
 /* Add additional styles as needed */
+/* Checkout.css */
+
+.checkout-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.checkout-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.order-summary {
+  flex-basis: 100%;
+  margin-top: 20px;
+}
+
+.order-item {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width:580px){
+  .form-group {
+    flex-basis: calc(50% - 10px);
+  }
+
+  .order-summary {
+    flex-basis: calc(50% - 10px);
+  }
+}

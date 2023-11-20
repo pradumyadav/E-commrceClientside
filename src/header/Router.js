@@ -28,6 +28,8 @@ import Cart from "../cart/Cart";
 import Login from "../allComponent/userLoginRegister/Login";
 import Register from "../allComponent/userLoginRegister/Register";
 import { ShowSearch } from "./ShowSearch";
+import Checkout from "../cart/Checkout";
+import { BuyCompo } from "../cart/BuyCompo";
 
 
 
@@ -70,6 +72,8 @@ import { ShowSearch } from "./ShowSearch";
                     <Route path="/login" element={<Login/>}></Route>
                     <Route path="/register" element={<Register/>}></Route>
                     <Route path="/search" element={<ShowSearch/>}></Route>
+                    <Route path="/checkout" element={<Checkout/>}></Route>
+                    <Route path="/buy" element={<BuyCompo/>}></Route>
                     </Routes>
 
                 </div>

@@ -6,11 +6,15 @@
     text-align: center;
 }
 .mobileChild{
+    box-shadow: 3px 5px 5px black;
     margin: 10px 15px;
-    width: 230px;
+    width: 200px;
+    height: 300px;
+  
+
 }
 .mobileChild:hover{
-    box-shadow: 3px 5px 5px black;
+  
     position: relative;
     bottom:5px;
 }
@@ -20,13 +24,15 @@
 }
 
 .mobile_Left{
+    border: 2px solid red;
     width: 300px;
     display: flex;
     justify-content: center;
    
 }
 .mobile_Right{ 
-    width: 65%;
+    border: 2px solid green;
+    width: 75%;
     display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
@@ -74,7 +80,7 @@
     }
     
     .furniture_Left_Child{
-      
+     
         position: relative;
         background-color: antiquewhite;
         top: 110px;
