@@ -3,7 +3,8 @@ import "./Header.css";
 import basketImg from "../img/add-to-cart.png";
 import { NavLink } from "react-router-dom";
 import {useSelector} from "react-redux"
-
+import seracImg from "../img/search.png"
+import profileImg from "../img/profile.png"
 export default function Header() {
 
   const cardCount = useSelector((state)=>state.Cart.cart)
@@ -14,24 +15,35 @@ export default function Header() {
   const[isFurnitureHovered,setIsFurnitureHovered]=useState(false)
   const[isWatchHovered,setIsWatchHovered]=useState(false)
   const[isGymHovered,setIsGymHovered]=useState(false)
-  
+  const [searchData,setSearchData]=useState([])
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
+  const handleChange=(e)=>{
+    setSearchData(e.target.value)
+
+  }
+  const handleSearch=()=>{
+    alert("Serch Somthig ....")
+  }
+
   return (
     <div>
 
       <div className="top1">
         <div className="logo">UrbanPulse</div>
         <div className="top1_right"> 
-        <input className="search_Bar"></input>
+        <div>
+        <input className="search_Bar" value={searchData} onChange={()=>handleChange}/>
+        <button onClick={handleSearch}><img className="seracImg" src={seracImg} alt="Not Found"></img></button>
+        </div>
         <NavLink to="/cart">
         <img className="basket_Img basket" src={basketImg} alt="Not Found" /><span className="span1" >{cardCount.length}</span>
         </NavLink>
           
         <NavLink to="/register">
         <div className="sign_In">
-          <button>Sign In</button>
+          <button><img className="profileImg" src={profileImg} alt="Not Found"></img></button>
         </div>
         </NavLink>
          {/* Hamburger Icon for Mobile */}
@@ -173,6 +185,7 @@ export default function Header() {
         </div>
         
       </nav>
+      
     </div>
   );
 }
