@@ -8,7 +8,7 @@ const AddtoCart = createSlice({
   reducers: {
     addtoCart: (state, action) => {
       const token =localStorage.getItem("token")
-    // if(token){
+     if(token){
       const existingItem = state.cart.find(
         (item) => item.id === action.payload.id
       );
@@ -24,11 +24,11 @@ const AddtoCart = createSlice({
           quantity: 1,
           total: action.payload.price,
         });
-      // }
+       }
     }
-    // else{
-    //  alert ("Login First")
-    // }
+     else{
+     alert ("Login First")
+    }
     },
     RemoveItem: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
