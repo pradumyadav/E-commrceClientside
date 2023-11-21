@@ -21,21 +21,21 @@ export default function Register() {
     e.preventDefault();
     console.log(data);
     axios
-    .post("http://localhost:4001/user/register", data)
-      // .post("https://e-commerce-hspl.onrender.com/user/register", data)
+    // .post("http://localhost:4001/user/register", data)
+      .post("https://e-commerce-hspl.onrender.com/user/register", data)
       .then((res) => {
         alert(res.data.message);
-        // Store the token in local storage
+     
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("name",res.data.name)
-        // Redirect to the login page
+      
         navi("/");
       })
       .catch((err) => {
         console.log(err);
-        // Handle errors here
+      
       });
-    // Reset the form data
+   
     setData({
       name: "",
       email: "",

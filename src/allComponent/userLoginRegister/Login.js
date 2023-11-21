@@ -20,8 +20,8 @@ export default function Login () {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-    .post("http://localhost:4001/user/login", data)
-      // .post("https://e-commerce-hspl.onrender.com/user/login", data)
+    //.post("http://localhost:4001/user/login", data)
+       .post("https://e-commerce-hspl.onrender.com/user/login", data)
       .then((res) => {
         alert(res.data.message);
         setData(res.data);
