@@ -2,7 +2,7 @@
 
 
 .top3_Img{
- 
+    margin-top: 20px;
     width:98.9%;
     height: 400px;
     
@@ -11,9 +11,9 @@
 @media screen and (max-width:580px){
     
 .top3_Img{
- 
-    width:98.1%;
-    height: 400px;
+ margin-top: 15px;
+    width:98.8%;
+    height: 200px;
     
 
 }
@@ -27,4 +27,5 @@
         
     
     }
+    
 }

@@ -23,19 +23,24 @@ export default function Register() {
     axios
       .post("https://e-commerce-hspl.onrender.com/user/register", data)
       .then((res) => {
-         alert(res.data.message);
-        setData(res.data);
-        localStorage.getItem("token", res.data.token);
+        alert(res.data.message);
+        // Store the token in local storage
+        localStorage.setItem("token", res.data.token);
+        // Redirect to the login page
         navi("/login");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        // Handle errors here
+      });
+    // Reset the form data
     setData({
-      name:"",
+      name: "",
       email: "",
       password: "",
-    
     });
   };
+  
   return (
     <>
       <div className="loginParent">

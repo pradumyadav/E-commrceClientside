@@ -79,10 +79,10 @@ const handlelogout= ()=>{
        
 
          <div className="profile"><img className="profileImg" src={profileImg} alt="Not Found"></img>
-                <div >
+                <div className="webpro">
                   <span>{val.value}</span>
                   {
-                    val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span><NavLink to='/login'>{val.btn}</NavLink></span>
+                    val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span className="webSpan"><NavLink to='/login'>{val.btn}</NavLink></span>
                   }
                 </div>
             </div>
@@ -95,17 +95,27 @@ const handlelogout= ()=>{
 
       <nav className={`nav2 ${isMenuOpen ? "open" : ""}`}>
         <div className="ham_Div">
-        <input className="search" placeholder="Search Here"></input>
+        <div>
+        <input  className="search"onChange={handleChange}/>
+        <button  className="headBt" onClick={handleSearch}><Link to="/search" state={searchData}><img className="seracIm" src={seracImg} alt="Not Found"></img></Link></button>
+        </div>
 
+
+             <div className="ham_Flex">        
         <NavLink to="/cart">
         <img className="ham_Basket_Img2" src={basketImg} alt="Not Found" />
         <span className="span2">{cardCount.length}</span>
         </NavLink>
       
-        <div className="sign">
-          <button className="ham_Btn">Sign In</button>
-        </div>
-
+        <div className="profil"><img className="profileImg" src={profileImg} alt="Not Found"></img>
+               
+                  <span>{val.value}</span>
+                  {
+                    val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span><NavLink to='/login'>{val.btn}</NavLink></span>
+                  }
+               
+            </div>
+            </div>  
         </div>
      
         <div
