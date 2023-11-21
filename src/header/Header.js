@@ -22,6 +22,7 @@ export default function Header() {
   // const [results, setResults] = useState([]);
 const token=localStorage.getItem("token")
 const userName=localStorage.getItem("name")
+console.log(userName)
 const Nav=useNavigate();
 
 useEffect(()=>{
@@ -41,7 +42,7 @@ else{
 
 const handlelogout= ()=>{
   localStorage.removeItem("token");
-  localStorage.removeItem("name");
+   localStorage.removeItem("name");
   Nav("/")
 }
   const toggleMenu = () => {

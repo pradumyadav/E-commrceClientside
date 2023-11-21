@@ -21,13 +21,15 @@ export default function Register() {
     e.preventDefault();
     console.log(data);
     axios
-      .post("https://e-commerce-hspl.onrender.com/user/register", data)
+    .post("http://localhost:4001/user/register", data)
+      // .post("https://e-commerce-hspl.onrender.com/user/register", data)
       .then((res) => {
         alert(res.data.message);
         // Store the token in local storage
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("name",res.data.name)
         // Redirect to the login page
-        navi("/login");
+        navi("/");
       })
       .catch((err) => {
         console.log(err);
@@ -47,10 +49,10 @@ export default function Register() {
         <h1>Register</h1>
         <br />
         <br />
-        {/* <label className="word" htmlFor="name">Name{" "}</label>
+        <label className="word" htmlFor="name">Name{" "}</label>
         <input  className="text" type="text" name="name" id="name" onChange={handleChange} value={data.name} required/>
         <br />
-        <br /> */}
+        <br />
         <label className="word" htmlFor="email">Email:{" "}</label>
         <input  className="text" type="email" name="email" id="email" onChange={handleChange} value={data.email} required/>
         <br />
