@@ -7,9 +7,10 @@ import "./Style.css"
 export default function Register() {
   const navi = useNavigate();
   const [data, setData] = useState({
-  
+    name:"",
     email: "",
     password: "",
+    
   
   });
   const handleChange = (e) => {
@@ -29,6 +30,7 @@ export default function Register() {
       })
       .catch((err) => console.log(err));
     setData({
+      name:"",
       email: "",
       password: "",
     
@@ -38,6 +40,10 @@ export default function Register() {
     <>
       <div className="loginParent">
         <h1>Register</h1>
+        <br />
+        <br />
+        <label className="word" htmlFor="name">Name{" "}</label>
+        <input  className="text" type="text" name="name" id="name" onChange={handleChange} value={data.name} required/>
         <br />
         <br />
         <label className="word" htmlFor="email">Email:{" "}</label>

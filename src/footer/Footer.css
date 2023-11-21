@@ -2,7 +2,7 @@
 
 
         .footer_Nav{
-            border:3px solid purple;
+       
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -44,7 +44,7 @@
 
         @media screen and (max-width:580px){
             .footer_Nav{
-                border:3px solid purple;
+              
                 display: flex;
                 flex-direction: column;
                 flex-wrap: wrap;

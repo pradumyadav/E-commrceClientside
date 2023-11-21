@@ -2,7 +2,7 @@
 
 
 .top3_Img{
-    border: 5px solid black;
+ 
     width:98.9%;
     height: 400px;
     
@@ -11,7 +11,7 @@
 @media screen and (max-width:580px){
     
 .top3_Img{
-    border: 5px solid black;
+ 
     width:98.1%;
     height: 400px;
     
@@ -21,7 +21,7 @@
 
 @media screen and (min-width:581px) and (max-width:825px){
     .top3_Img{
-        border: 5px solid black;
+      
         width:98.5%;
         height: 400px;
         

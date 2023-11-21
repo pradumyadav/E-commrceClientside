@@ -1,5 +1,5 @@
 // Cart.js
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import "./Cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../fiture/Store.js/Slice";
@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
-   const [ setCheckoutVisible] = useState(false);
+  // const [CheckoutVisible, setCheckoutVisible] = useState(false);
   
   const data = useSelector((state) => state.Cart.cart);
 
@@ -24,9 +24,9 @@ const Cart = () => {
     dispatch(DecreaseQuantity({ id }));
   };
 
-  const handleBuyNow = () => {
-    setCheckoutVisible(true);
-  };
+  // const handleBuyNow = () => {
+  //   setCheckoutVisible(true);
+  // };
 
   return (
     <div>
@@ -89,7 +89,7 @@ const Cart = () => {
 
         <div className="buy">
           <NavLink to="/checkout" state={data}>
-          <button  className="cartButton" onClick={handleBuyNow}>Buy Now</button>
+          <button  className="cartButton" >Buy Now</button>
           </NavLink>
         </div>
       </div>
