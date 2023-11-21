@@ -42,10 +42,10 @@ export default function Register() {
         <h1>Register</h1>
         <br />
         <br />
-        <label className="word" htmlFor="name">Name{" "}</label>
+        {/* <label className="word" htmlFor="name">Name{" "}</label>
         <input  className="text" type="text" name="name" id="name" onChange={handleChange} value={data.name} required/>
         <br />
-        <br />
+        <br /> */}
         <label className="word" htmlFor="email">Email:{" "}</label>
         <input  className="text" type="email" name="email" id="email" onChange={handleChange} value={data.email} required/>
         <br />
