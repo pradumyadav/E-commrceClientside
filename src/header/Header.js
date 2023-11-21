@@ -54,7 +54,7 @@ const handlelogout= ()=>{
     setQuery(e.target.value)
 
   }
-  axios.get(`http://localhost:4001/api/search?title=${query}`)
+  axios.get(`https://e-commerce-hspl.onrender.com/api/search?title=${query}`)
   .then((res)=>setSearchData(res.data))
   .catch(err=>console.log(err))
   
@@ -69,8 +69,8 @@ const handlelogout= ()=>{
         <div className="logo">UrbanPulse</div>
         <div className="top1_right"> 
         <div>
-        <input className="search_Bar" onChange={handleChange}/>
-        <button onClick={handleSearch}><Link to="/search" state={searchData}><img className="seracImg" src={seracImg} alt="Not Found"></img></Link></button>
+        <input  className="search_Bar"onChange={handleChange}/>
+        <button  className="headBtn" onClick={handleSearch}><Link to="/search" state={searchData}><img className="seracImg" src={seracImg} alt="Not Found"></img></Link></button>
         </div>
         <NavLink to="/cart">
         <img className="basket_Img basket" src={basketImg} alt="Not Found" /><span className="span1" >{cardCount.length}</span>

@@ -26,36 +26,36 @@ const Checkout = () => {
      
       <form>
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <label className="text" htmlFor="name">Name:</label>
+          <input className="inp" type="text" id="name" name="name" required />
         </div>
 
         <div className="form-group">
-          <label htmlFor="address">Address:</label>
-          <input type="text" id="address" name="address" required />
+          <label className="text" htmlFor="address">Address:</label>
+          <input className="inp" type="text" id="address" name="address" required />
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <label className="text" htmlFor="email">Email:</label>
+          <input className="inp" type="email" id="email" name="email" required />
         </div>
 
         <div className="form-group">
-          <label htmlFor="card">Credit Card Number:</label>
-          <input type="text" id="card" name="card" required />
+          <label className="text" htmlFor="card">Credit Card Number:</label>
+          <input className="inp" type="text" id="card" name="card" required />
         </div>
 
         <div className="form-group">
-          <label htmlFor="expiry">Card Expiry:</label>
-          <input type="text" id="expiry" name="expiry" placeholder="MM/YY"/>
+          <label className="text" htmlFor="expiry">Card Expiry:</label>
+          <input className="inp" type="text" id="expiry" name="expiry" placeholder="MM/YY"/>
         </div>
 
         <div className="form-group">
-          <label htmlFor="cvv">CVV:</label>
-          <input type="text" id="cvv" name="cvv" required />
+          <label className="text" htmlFor="cvv">CVV:</label>
+          <input className="inp" type="text" id="cvv" name="cvv" required />
         </div>
 
-        <button onClick={handleClick} type="submit">Place Order</button>
+        <button className="chechoutBtn" onClick={handleClick} type="submit">Place Order</button>
       </form>
       <div>
          
@@ -64,7 +64,7 @@ const Checkout = () => {
         return (
         <>      
                   
-                  <h2>Product: {item.title}</h2>
+                  <h2 className="cartPrice">Product: {item.title}</h2>
                   <h2 className="cartprice">
                    Price: {"₹ " + item.price * item.quantity}
                   </h2>
@@ -72,7 +72,7 @@ const Checkout = () => {
                   </>
                   )
       })}
-      <h1>Total :{total}</h1>
+      <h1 className="cartTotal">Total :{total}</h1>
 
      </div>
     </div>

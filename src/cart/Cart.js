@@ -89,7 +89,7 @@ const Cart = () => {
 
         <div className="buy">
           <NavLink to="/checkout" state={data}>
-          <button onClick={handleBuyNow}>Buy Now</button>
+          <button  className="cartButton" onClick={handleBuyNow}>Buy Now</button>
           </NavLink>
         </div>
       </div>

@@ -9,7 +9,7 @@
     text-align: center;
 }
 .clotheChild{
-   
+    box-shadow: 3px 5px 5px black;
     margin: 10px 15px;
     width: 200px;
     height: 300px;
@@ -17,7 +17,7 @@
   
 }
 .clotheChild:hover{
-    box-shadow: 3px 5px 5px black;
+  
     position: relative;
     bottom:5px;
 }

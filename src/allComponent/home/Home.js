@@ -64,7 +64,7 @@ import { addtoCart } from "../../fiture/Store.js/Slice";
                       </button>
                       </div>
                           <div className="home_Video">
-                            <img src="https://media1.tenor.com/images/b9f0366ce2fcf04dda9da527d831bed1/tenor.gif?itemid=8171804" style={{width:"95%"}} alt="Not Found"/>
+                            <img src="https://uploads-ssl.webflow.com/63f53af6e7d3ad6807222368/644a04d84d0a0b0c0989993c_P_EFt0Y7fve8ARoGGiq2A7Nb-64Ky5Y3zgeIuAliQgiOScwSrCTXCRJVhatRylzPFjXQmhaJVoSj1rXeOGC0lZcPTD1Ok-qguKEiRisFVj_G24y-L372WWPB4ZOUye5nh97spOofwKLHcTEtlg.gif" style={{width:"98.5%"}} alt="Not Found"/>
 
                             </div>
                           
