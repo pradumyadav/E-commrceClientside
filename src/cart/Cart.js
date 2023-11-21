@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const [isCheckoutVisible, setCheckoutVisible] = useState(false);
+   const [ setCheckoutVisible] = useState(false);
   
   const data = useSelector((state) => state.Cart.cart);
 
