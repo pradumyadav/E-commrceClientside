@@ -112,7 +112,7 @@ font-weight: 900;
 h4{
     color:white;
 }
-li{
+.li{
     color: white;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
@@ -145,9 +145,12 @@ ul.sub-routes {
 
 .menu{
     position: absolute;
-    background-color: crimson; 
-    text-align:start ;
     
+    background-color:rgb(202, 190, 190); 
+    text-align: start;
+    width: 80px;
+   
+     
 }
 
 

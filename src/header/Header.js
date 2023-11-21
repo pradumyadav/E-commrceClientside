@@ -126,7 +126,7 @@ const handlelogout= ()=>{
         >
           <NavLink to="/">
             <ul  type="none">
-              <li>HOME</li>
+              <li className="li">HOME</li>
               {isHomeHovered && (
                 <ul type="none" className="menu">
                   <NavLink to="/clothe"><li>Clothe</li></NavLink> 
@@ -148,7 +148,7 @@ const handlelogout= ()=>{
              <NavLink to="/mobile">
           <ul  type="none">
 
-            <li>MOBILE</li>
+            <li className="li">MOBILE</li>
             {isMobileHovered && (
                 <ul type="none" className="menu">
                 <NavLink to="/iphone"><li>IPhone</li></NavLink>
@@ -167,7 +167,7 @@ const handlelogout= ()=>{
        >
        <NavLink to="/furniture">
           <ul type="none">
-            <li>FURNITURE</li>
+            <li className="li">FURNITURE</li>
 
             {isFurnitureHovered && (
                  <ul type="none" className="menu" >
@@ -186,7 +186,7 @@ const handlelogout= ()=>{
        >
        <NavLink to="/watch">
           <ul type="none">
-            <li>WATCH</li>
+            <li className="li">WATCH</li>
             {isWatchHovered && (
                 <ul type="none" className="menu">
                   <NavLink to="/fastrck"><li>Fastrck</li></NavLink>   
@@ -204,7 +204,7 @@ const handlelogout= ()=>{
        >
        <NavLink to="/clothe">
           <ul type="none">
-            <li>CLOTH</li>
+            <li className="li">CLOTH</li>
             {isClotheHovered && (
                 <ul type="none" className="menu">
                    <NavLink to="/men"><li>Men</li></NavLink> 
@@ -222,7 +222,7 @@ const handlelogout= ()=>{
         >
         <NavLink to="/gym">
           <ul type="none">
-           <li>GYM</li> 
+           <li className="li">GYM</li> 
             {isGymHovered && (
                 <ul type="none" className="menu">
                <NavLink to="/dumbbell"> <li>Dumbbell</li></NavLink> 
