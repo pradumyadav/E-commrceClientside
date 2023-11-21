@@ -54,6 +54,8 @@
   .loadMore_Parent{
         display: flex;
         justify-content: center;
+        /* width:99%; */
+        
   }
   .loadMore{
     font-weight: 900;
