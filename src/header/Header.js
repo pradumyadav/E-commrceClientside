@@ -70,7 +70,7 @@ const handlelogout= ()=>{
         <div className="logo">UrbanPulse</div>
         <div className="top1_right"> 
         <div>
-        <input  className="search_Bar"onChange={handleChange}/>
+        <input  className="search_Bar" placeholder="Search Here.." onChange={handleChange}/>
         <button  className="headBtn" onClick={handleSearch}><Link to="/search" state={searchData}><img className="seracImg" src={seracImg} alt="Not Found"></img></Link></button>
         </div>
         <NavLink to="/cart">
@@ -97,7 +97,7 @@ const handlelogout= ()=>{
       <nav className={`nav2 ${isMenuOpen ? "open" : ""}`}>
         <div className="ham_Div">
         <div>
-        <input  className="search"onChange={handleChange}/>
+        <input  className="search" placeholder="Search Here.." onChange={handleChange}/>
         <button  className="headBt" onClick={handleSearch}><Link to="/search" state={searchData}><img className="seracIm" src={seracImg} alt="Not Found"></img></Link></button>
         </div>
 
