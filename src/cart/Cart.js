@@ -4,14 +4,16 @@ import "./Cart.css";
 import { useSelector, useDispatch } from "react-redux";
 import { RemoveItem, IncreaseQuantity, DecreaseQuantity } from "../fiture/Store.js/Slice";
 
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
+import {loadStripe} from "@stripe/stripe-js"
+
 
 const Cart = () => {
   const dispatch = useDispatch();
 
   
   const data = useSelector((state) => state.Cart.cart);
-
+    console.log(data)
   const total = data.reduce((acc, item) => {
     return acc + item.price * item.quantity;
   }, 0);
@@ -24,7 +26,30 @@ const Cart = () => {
     dispatch(DecreaseQuantity({ id }));
   };
 
- 
+ //peyment integration
+ const makePayment =async()=>{
+  const stripe =await loadStripe("pk_test_51OF9HNSGSBjFGMDab3N5Rml5kzgrwMw9RYhJv6PXHz4cpymdUE1nikzSzy43a7v5y3vjMxcARZP3Sr58Rf3avGdM00mJ2RkzIR")
+
+  const body ={
+    products:data
+  }
+  const headers={
+    "Content-Type":"application/json"
+  }
+  const response = await fetch("http://localhost:4001/out/create-checkout-session",{
+          method:"POST",
+          headers:headers,
+          body:JSON.stringify(body)
+  })
+  const session= await response.json();
+
+  const result =stripe.redirectToCheckout({
+    sessionId:session.id
+  })
+  if(result.error){
+    console.log(result.error)
+  }
+ }
 
   return (
     <div>
@@ -86,9 +111,9 @@ const Cart = () => {
         </div>
 
         <div className="buy">
-          <NavLink to="/checkout" state={data}>
-          <button  className="cartButton" >Buy Now</button>
-          </NavLink>
+          
+          <button  className="cartButton" onClick={makePayment}>Buy Now</button>
+       
         </div>
       </div>
 

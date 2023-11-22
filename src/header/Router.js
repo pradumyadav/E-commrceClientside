@@ -30,6 +30,8 @@ import Register from "../allComponent/userLoginRegister/Register";
 import { ShowSearch } from "./ShowSearch";
 import Checkout from "../cart/Checkout";
 import { BuyCompo } from "../cart/BuyCompo";
+import  Sucess  from "../cart/Sucess";
+import Cancle from "../cart/Cancle";
 
 
 
@@ -74,6 +76,8 @@ import { BuyCompo } from "../cart/BuyCompo";
                     <Route path="/search" element={<ShowSearch/>}></Route>
                     <Route path="/checkout" element={<Checkout/>}></Route>
                     <Route path="/buy" element={<BuyCompo/>}></Route>
+                    <Route path="/sucess" element={<Sucess/>}></Route>
+                    <Route path="/cancel" element={<Cancle/>}></Route>
                     </Routes>
 
                 </div>
