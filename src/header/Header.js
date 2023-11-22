@@ -22,7 +22,7 @@ export default function Header() {
   // const [results, setResults] = useState([]);
 const token=localStorage.getItem("token")
 const userName=localStorage.getItem("name")
-console.log(userName)
+// console.log(userName)
 const Nav=useNavigate();
 
 useEffect(()=>{
