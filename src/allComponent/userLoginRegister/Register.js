@@ -29,7 +29,7 @@ export default function Register() {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("name",res.data.name)
       
-        navi("/");
+        navi("/login");
       })
       .catch((err) => {
         console.log(err);
