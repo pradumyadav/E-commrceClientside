@@ -62,6 +62,10 @@ const handlelogout= ()=>{
   const handleSearch=()=>{
    
   }
+  const [btn,setBtn]=useState(false)
+  const byClick=()=>{
+    setBtn(!btn)
+  }
 
   return (
     <div>
@@ -81,7 +85,7 @@ const handlelogout= ()=>{
 
          <div className="profile"><img className="profileImg" src={profileImg} alt="Not Found"></img>
                 <div className="webpro">
-                  <span>{val.value}</span>
+                  <span style={{borderBottom:"2px solid white"}}>{val.value}</span>
                   {
                     val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span className="webSpan"><NavLink to='/login'>{val.btn}</NavLink></span>
                   }
@@ -108,13 +112,16 @@ const handlelogout= ()=>{
         <span className="span2">{cardCount.length}</span>
         </NavLink>
       
-        <div className="profil"><img className="profileImg" src={profileImg} alt="Not Found"></img>
-               
-                  <span>{val.value}</span>
-                  {
-                    val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span><NavLink to='/login'>{val.btn}</NavLink></span>
-                  }
-               
+        <div className="profil"><img className="profileImg" src={profileImg} alt="Not Found" onClick={byClick}></img>
+              {
+                btn === true ?  <div className="webpr">
+                <span>{val.value}</span>
+                {
+                  val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span><NavLink to='/login'>{val.btn}</NavLink></span>
+                }
+             </div>
+                : " "
+              }
             </div>
             </div>  
         </div>
