@@ -63,7 +63,7 @@
   background-color: white;
 }
 .profile{
-  border: 2px solid red;
+ 
   width:50x;
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +83,7 @@ font-weight: 900;
 .webpro{
   /* display: flex; */
   flex-direction: column;
-  border: 2px solid green;
+ 
   position: absolute;
   top: 60px;
   right: 50px;
