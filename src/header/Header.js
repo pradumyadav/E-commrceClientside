@@ -117,7 +117,7 @@ const handlelogout= ()=>{
                 btn === true ?  <div className="webpr">
                 <span>{val.value}</span>
                 {
-                  val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span><NavLink to='/login'>{val.btn}</NavLink></span>
+                  val.btn === "LogOut" ? <span onClick={handlelogout}>{val.btn}</span> :  <span style={{color:"black"}}><NavLink to='/login'>{val.btn}</NavLink></span>
                 }
              </div>
                 : " "
