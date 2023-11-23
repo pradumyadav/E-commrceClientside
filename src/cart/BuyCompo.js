@@ -7,7 +7,7 @@ export const BuyCompo = () => {
     <div>
        <div class="order-container">
     <h2>Your order is done!</h2>
-    <div class="congrats-animation">&#10004; Congratulations! &#10004;</div>
+    <div class="congrats-animation">&#10004; Cancle Peyment! &#10004;</div>
         <button onClick={()=>navi('/')}> Continue Shopping</button>
   </div>
 
